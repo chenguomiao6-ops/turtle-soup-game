@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>海龟汤 - 时空循环</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="video-container">
+            <video id="main-video" autoplay muted playsinline loop>
+                <source src="V1.mp4" type="video/mp4">
+            </video>
+            <div id="video-overlay"></div>
+            <div id="video-controls">
+                <button id="play-btn" class="control-btn">▶</button>
+                <button id="pause-btn" class="control-btn">⏸</button>
+                <button id="volume-btn" class="control-btn">🔊</button>
+            </div>
+        </div>
+
+        <div id="story-panel">
+            <div id="story-text"></div>
+        </div>
+
+        <div id="dialog-panel">
+            <div id="dialog-header">问答环节</div>
+            <div id="dialog-main">
+                <div id="dialog-left">
+                    <div id="dialog-left-header">推荐问题</div>
+                    <div id="question-list"></div>
+                </div>
+                <div id="dialog-right">
+                    <div id="dialog-right-header">对话记录</div>
+                    <div id="dialog-history"></div>
+                </div>
+            </div>
+            <div id="dialog-bottom">
+                <div id="input-area">
+                    <input type="text" id="custom-input" placeholder="输入你的问题..." />
+                    <button id="submit-btn" class="action-btn">提问</button>
+                </div>
+                <div id="action-buttons">
+                    <button id="hint-btn" class="action-btn secondary">💡 提示</button>
+                    <button id="reveal-btn" class="action-btn warning">📖 看答案</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="choice-panel">
+            <div id="choice-header">你的选择</div>
+            <div id="choice-container"></div>
+        </div>
+
+        <div id="ending-panel">
+            <div id="ending-title"></div>
+            <div id="ending-content"></div>
+            <button id="restart-btn" class="action-btn">重新开始</button>
+        </div>
+
+        <div id="start-panel">
+            <div id="start-title">海龟汤 - 时空循环</div>
+            <div id="start-content">
+                <p>你走进了一座废弃的教学楼，里面空无一人。</p>
+                <p>走廊两侧的灯光忽明忽暗，墙上的时钟指向午夜三点。</p>
+                <p>你知道，如果不能在天亮前离开这里，你就会永远留在这里。</p>
+                <p>然而随着探索，你发现：</p>
+                <p>每层楼的布局都一样；</p>
+                <p>教室编号不断变化；</p>
+                <p>有人在黑板上留下了一句话：</p>
+                <p class="highlight">"不要相信钟表。"</p>
+                <p>天快亮了。</p>
+                <p>为什么你会被困在这里？又该如何离开？</p>
+            </div>
+            <button id="start-btn" class="action-btn">开始探索</button>
+        </div>
+
+        <div id="progress-bar">
+            <div id="progress-fill"></div>
+        </div>
+
+        <div id="hint-panel">
+            <div id="hint-icon">💡</div>
+            <div id="hint-text"></div>
+        </div>
+
+        <div id="pose-panel">
+            <div id="pose-header">动作识别</div>
+            <div id="pose-container">
+                <video id="pose-video" autoplay playsinline muted></video>
+                <canvas id="pose-canvas"></canvas>
+            </div>
+            <div id="pose-instruction">挥动手臂来摔碎时钟！</div>
+            <div id="pose-progress-container">
+                <div id="pose-progress-fill"></div>
+            </div>
+            <div id="pose-status">准备中...</div>
+            <button id="pose-skip-btn" class="control-btn">跳过</button>
+        </div>
+    </div>
+
+    <script src="story.js?v=4"></script>
+    <script src="audioPlayer.js?v=4"></script>
+    <script src="videoPlayer.js?v=4"></script>
+    <script src="poseDetector.js?v=4"></script>
+    <script src="llmClient.js?v=4"></script>
+    <script src="app.js?v=4"></script>
+</body>
+</html>
